@@ -41,7 +41,18 @@ const songService = require('../services/Chansons.service')
 
 router.get('/', async function (req, res, next) {
     try {
-        res.json(await songService.getListOfSongs(req.query.page));
+        res.json([{
+            "id": 1,
+            "titreChanson": "Coco Androide",
+            "nomArtiste": "LikFraiz",
+            "nomsaArtistescCollaborateurs": null,
+            "pochetteAlbum": "https://source.boomplaymusic.com/group10/M00/11/16/50d8e8212e2b41d0b6a66ebf3a0ad6f1_464_464.jpg",
+            "chansonUrl": "NYXIA.mp3",
+            "lyrics": "Coco android coca le n'ta inside the table\nMême intension que Diogo Jota inside the box\naucun poto n'a assez riz pour buy mes blèmes\nJ'crois que... la vrai vie ne sera jamais comme dans la mposs\nTu fais donc quoi? a ton avis!\nOn mouille le maillot sans baisser short!\nY'a pas de gri gri sous mon habit!\nMais fais comme un nkassa je perd par le nord\n\n\nA sans a l'heure sur le benskin\nburberry sur la griffe du slim\nallons a deux ses mon code puk'puk\nSans calé c'est son code pin (neuh)\nJe rêve de monarchie de chine\nToi tu rêves de contrefaçon de jeans\n2-3-7 orijin, on peux pas s'arrêter on a pas l'usine\nD'un coté j'ai la cote a toi de faire le choix\nOn pèse sur la balance sans prendre le poids\nSuffit que tu sois cline pour qu'on te pointe du doigts\nY'a pas de combi si tu ndem tu va choi\nTrès fort comme le sky dans le sachet\nN'arrivent pas croire que je suis camerounais\nElle m'immortalise parce que jamais on sais\nToi t'es médiatisé mais aucun effet",
+            "prix": "0.00",
+            "created_at": "2023-12-28T19:44:55.000Z",
+            "updated_at": "2023-12-29T11:57:47.000Z"
+        }]);
     } catch (err) {
         console.error(`Error while getting songs`, err.message);
         next(err);
